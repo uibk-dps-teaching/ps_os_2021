@@ -19,6 +19,7 @@ previous day (Tuesdays).
 | Date       | Exc             | Topic           | Notes                                 |
 | ---------- | --------------- | --------------- | ------------------------------------- |
 | 2021-03-03 | -               |                 | Introduction to UNIX, shell scripting |
+| 2021-03-10 | [1](exercise01) | Shell scripting |                                       |
 
 ## General Information
 
