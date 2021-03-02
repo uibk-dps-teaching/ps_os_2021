@@ -5,8 +5,8 @@ CFLAGS = -std=gnu11 -Wall -Werror -Wextra
 all: program1 program2
 
 clean:
-	$(RM) program1 program2 common.o
+	$(RM) common.o program1 program2
 
-program1: program1.c common.h common.o
+program1: common.o program1.c
 
-program2: program2.c common.h common.o
+program2: common.o program2.c
