@@ -31,7 +31,7 @@ via SSH (such as [Visual Studio
 Code](https://code.visualstudio.com/docs/remote/ssh)).
 
 Note that the default version of the GCC compiler present on ZID-GPL is
-_extremely_ outdated. You may load a never version by calling `module load gcc/9.2.0`.
+_extremely_ outdated. You may load a newer version by calling `module load gcc/9.2.0`.
 
 ### Connecting to ZID-GPL via SSH
 
