@@ -49,7 +49,7 @@ void bstree_insert(bstree* t, value_t v);
 void bstree_remove(bstree* t, value_t v);
 
 /**
- * Returns true if the given tree `t` contains `d`, false otherwise.
+ * Returns true if the given tree `t` contains `v`, false otherwise.
  */
 bool bstree_contains(const bstree* t, value_t v);
 
