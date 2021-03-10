@@ -55,8 +55,8 @@ from you than originally planned by us.
 ## Task 1
 
 Implement the first part of a module (`bstree.h`, `bstree.c`) providing a
-sorted binary tree for integers. With your implementation it should be
-possible to:
+sorted binary tree for numeric values of type `value_t`. With your
+implementation it should be possible to:
 
 1. Create and destroy a tree: `bstree_create()` and `bstree_destroy()`.
 2. Insert values in the tree: `bstree_insert()`.
@@ -70,7 +70,7 @@ these descriptions as closely as possible.
 The `bstree` type is used as a _handle_ to work with the whole tree, and can
 also be used as storage for information concerning the entire tree. How you
 implement the tree structure itself is up to you. You might for example have
-a `bstree_node`, which holds on to an integer and references to the left and
+a `bstree_node`, which holds on to a `value_t` and references to the left and
 right child nodes.
 
 Use `make check_task1` to check whether the produced output matches the
