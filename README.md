@@ -16,11 +16,12 @@ exercises associated with a given date are to be discussed on that day, i.e.,
 solutions for that exercise have to be handed in via OLAT by 17:00 on the
 previous day (Tuesdays).
 
-| Date       | Exc             | Topic              | Notes                                 |
-| ---------- | --------------- | ------------------ | ------------------------------------- |
-| 2021-03-03 | -               |                    | Introduction to UNIX, shell scripting |
-| 2021-03-10 | [1](exercise01) | Shell scripting    | C Refresher                           |
-| 2021-03-17 | [2](exercise02) | Binary Search Tree |                                       |
+| Date       | Exc             | Topic                      | Notes                                 |
+| ---------- | --------------- | -------------------------- | ------------------------------------- |
+| 2021-03-03 | -               |                            | Introduction to UNIX, shell scripting |
+| 2021-03-10 | [1](exercise01) | Shell scripting            | C Refresher                           |
+| 2021-03-17 | [2](exercise02) | Binary Search Tree         |                                       |
+| 2021-03-24 | [3](exercise03) | Processes, signal handling |                                       |
 
 ## General Information
 
