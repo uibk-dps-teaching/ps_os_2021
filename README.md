@@ -22,6 +22,7 @@ previous day (Tuesdays).
 | 2021-03-10 | [1](exercise01) | Shell scripting            | C Refresher                           |
 | 2021-03-17 | [2](exercise02) | Binary Search Tree         |                                       |
 | 2021-03-24 | [3](exercise03) | Processes, signal handling |                                       |
+| 2021-04-14 | [4](exercise04) | FIFOs, pipes & sockets     |                                       |
 
 ## General Information
 
