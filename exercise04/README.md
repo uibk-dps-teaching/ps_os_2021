@@ -90,7 +90,7 @@ between two arbitrary commands. For example, a call to `./task2 "ls -la" "grep f
 should list all files in the current working directory that contain the word `foo`.
 
 To implement this behavior, your program is required to create a process that
-executes first the command, and then another process that executes the second
+executes the first command, and another process that executes the second
 command. Communicate between both processes by using an **unnamed** pipe.
 
 You can assume that each program and its (optional) arguments are passed
