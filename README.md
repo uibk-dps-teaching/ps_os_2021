@@ -23,6 +23,7 @@ previous day (Tuesdays).
 | 2021-03-17 | [2](exercise02) | Binary Search Tree         |                                       |
 | 2021-03-24 | [3](exercise03) | Processes, signal handling |                                       |
 | 2021-04-14 | [4](exercise04) | FIFOs, pipes & sockets     |                                       |
+| 2021-04-21 | [5](exercise05) | Shared memory & semaphores |                                       |
 
 ## General Information
 
