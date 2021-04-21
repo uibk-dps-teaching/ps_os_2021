@@ -1,6 +1,6 @@
 # Exercise 6
 
-This week we are investigating various _scheduling algorithms_ by
+This week you will be investigating various _scheduling algorithms_ by
 implementing them in C. To this end, we provide a _scheduler simulation
 framework_, which will be explained in more detail in the next section.
 
@@ -21,7 +21,7 @@ The basic operation of the simulation framework is as follows:
   processes have been serviced.
 - For each time step, the framework calls a
   **user provided scheduling function** that decides which process should run
-  for the next time step.
+  next.
   - Only processes that can already be executed and have not finished
     are provided to the scheduling function, i.e.
     `time step >= process.arrival_time` and `process.remaining_time > 0`.
@@ -52,9 +52,9 @@ For each time step, the scheduling function receives a variable of type
 - `process_t* get_process(const scheduler_context_t* ctx, size_t idx)`
   returns the process at the given index.
 - `int get_timestep(const scheduler_context_t* ctx)` returns the current
-  timestep.
+  time step.
 - `void schedule_process(scheduler_context_t* ctx, process_t* process)` marks
-  the given process for scheduling in the current timestep.
+  the given process for scheduling in the current time step.
 - `void move_process_to_end(scheduler_context_t* ctx, process_t* process)`
   moves the given process to the end of the list of eligible processes.
 
@@ -136,6 +136,9 @@ justify why your output is correct.
 
 - Implement **priority** scheduling **with preemption**.
 - Implement **priority** scheduling **without preemption**.
+
+Processes with higher `priority` values should be scheduled _before_
+processes with `lower` priority values.
 
 ## Task 3
 
