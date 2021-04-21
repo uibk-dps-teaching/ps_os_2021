@@ -6,7 +6,8 @@
 int main(void) {
 	puts("This is Program 1");
 
-	common_function();
+	common_function(5);
 
 	return EXIT_SUCCESS;
 }
+

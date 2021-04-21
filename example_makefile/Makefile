@@ -1,12 +1,14 @@
 CFLAGS = -std=gnu11 -Wall -Werror -Wextra
 
-.PHONY: all clean
-
+.PHONY: all
 all: program1 program2
 
+.PHONY: clean
 clean:
-	$(RM) program1 program2 common.o
+	$(RM) common.o program1 program2
 
-program1: program1.c common.h common.o
+common.o: common.c common.h
 
-program2: program2.c common.h common.o
+program1: program1.c common.o
+
+program2: program2.c common.o
