@@ -1,0 +1,34 @@
+2) What is a race condition?
+
+A race condition occurs when more than one thread tries to access data and want to change it simultaneously.
+The order in which the threads access the data is dependent on the scheduling algorithm, which can swap 
+between threads at any time.
+
+3) Why do race conditions exist?
+
+An example of a cause for a race condition:
+
+    //checking a variable and then working on it in a multithreaded area
+    if (x == 100) {
+        y = x * 5;
+    }
+
+If another thread changed the x value during the time the current thread is evaluating y (after checking if x == 100), 
+then y != 500
+
+4) Is the output of a program with a race condition always correct?
+
+No, race conditions can lead to undefined behaviour of the program due to inconsistency in the data.
+
+5) If you run your program 100 times and always get the correct result, does that mean that there is no race condition?
+
+
+
+6) What is synchronization?
+
+Process synchronization coordinates the execution of multiple processes so that more than one process has access to the 
+same data/recourses without causing an inconsistency of data.
+
+7) Why are semaphores well suited for synchronizing producer-consumer patterns?
+
+Because they solve the problem of lost wakeup calls (which could lead to a deadlock).
