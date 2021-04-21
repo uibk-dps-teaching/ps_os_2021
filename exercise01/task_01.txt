@@ -1,0 +1,71 @@
+#Skript 1
+
+#!/bin/bash                 - call with bash skript 1
+for FN in "$@"              - looping through every argument within "$@" -which is the list of arguments (as strings)
+do                          - FN holds now the current arg that is being looped through
+    chmod 0750 "$FN"        - chmod changes the permissions of the current file (FN)
+                                oktalcode 0750
+                                0 - leading Zero (could be set to UID,GID or sticky) i.e. only root user can change and delete this file.
+                                7 - Owner: read (4) + write(2) + execute (1)
+                                5 - Group: read (4) + execute (1)
+                                0 - Others: No Permissions
+done
+
+#with input argument:
+Every input argument is assumed to be filenames within this directory. 
+The files permissions will be changed to the following: owner (rwx), group (r-e), others (none). 
+
+#without input argument:
+Without any input arguments, this skript is effectless.
+
+#Skript 2
+
+#!/bin/bash
+function usage {			
+    echo "$0: (usage) insufficient number of arguments. A minimum of 3 arguments is expected."
+      	                                - Prints string into terminal,
+                                      	$0 holds the name of the program
+    exit 1
+                                        - unsuccessful exit
+}
+
+ARG1=$1; shift || usage            	- the shift function shifts positional parameters by [n] times.
+ARG2=$1; shift || usage             	- here n is 1 so it shifts to the left by 1 value
+ARG3=$1; shift || usage             	- The command on the lhs of the semicolon is always executed first then the expression on the rhs is evaluated
+                                      	- if shift is unsuccessful (if n is negative or n > $#), then the function usage is called
+
+grep -n "$ARG3" "$ARG1" > "$ARG2"   
+	                                grep    a function that searches for patterns within given file(s)
+        	                        -n      line to be searched within file
+                	                "$ARG3" Pattern
+                        	        "$ARG1" File to be searched
+                                	>       redirect stdout to the file "$ARG2"
+                                    	"$ARG2" File where search results are saved
+
+#with input argument:
+3 Arguments are needed for this script to run successfully.
+The script searches for a pattern within a given file and prints the results within a specified file.
+Argument 1: File to be searched
+Argument 2: File where search results are saved
+Argument 3: Patter to be used for search within file
+
+#without input argument:
+If the script is called with no or less than 3 arguments, the method "usage" is called.
+An error message is printed in the console by the "usage" method.
+
+
+#Skript 3
+
+#!/bin/bash			
+makedir "$1" 2> /dev/null   
+
+                            makedir     - creates new directory
+                            "$1"        - first argument of skript call as a string
+                            2>          - redirects stderr to location on its right
+                            /dev/null   - the null device. It takes any input and throws it away, i.e. output supression. 
+
+#With input argument:
+Creates new directory with argument 1 as its name.
+
+#Without input argument:
+The new directory cannot be created. However all the error messages are thrown away and not displayed in the terminal.
