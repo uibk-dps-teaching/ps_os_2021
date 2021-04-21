@@ -1,0 +1,53 @@
+- When would you use a sorted binary tree over a linked list?
+The advantage of a sorted binary tree is that the logarithm for searching an item is very efficient. 
+Running time efficiency of search algorithm: O(logN) where N is the number of elements in the tree;
+
+Whereas a linked list has a linear search algorithm with the efficiency of O(N).
+
+So if the list is short and sorted I would use a liked list, since it is less maintanance and easier to implement than a binary tree.
+However, if I need to search through a big set of data regularly / need to add or remove less frequently I would implement a binary tree since it would be much more efficient. I 
+
+- Why do we use multiple translation units instead of putting everything a single file?
+This is for several reasons. For one if a program is developed for a client, you can develop a interface with the help of a header file for the client.
+There all the functions are defined and documented for the client to use. However the client shouldn't have access to the implementation to the code,
+therefore the implementation itself is private and not accessible by the client.
+Modules are also useful to seperate and structure big projects into smaller bits which make it easier to keep an overview for the developers and also updating.
+
+- Is the development cycle (i.e. changing a source file, recompiling and running tests) faster when using modules? Explain your answer.
+Yes. Since then only the module which has been changed need to be newly interpreted by the compiler, instead of one big file.
+
+- What is a header guard and why is it needed?
+A header guard is a conditional compilation directive and can be used to avoid problems caused by ambiguous function definitions.
+
+- Explain memory leaks. Why are memory leaks bad? 
+Memory leaks take place when a programm creates a memory heap but doesn't free it after being done using it.
+This is a problem when the written code doesn't terminate. (e.g. in servers) 
+Then the memory is allocated despite not being used anymore and takes up unnessessary space. This can fill up the available memory for the program to 
+run and cause it to run out of space.
+
+- What is the reason behind writing everything in English?
+English is a global language, this way anyone trying to make sense of your code will be more likely to understand it.
+It is good to have and abide the global standard since software is often used internationally and therefore faciliates the teamwork.
+
+- Why should you use static for non-exported functions?
+Static functions cannot be accessed from the headerfile/interface the client uses. 
+They are useful as helper or background functions to implement the global functions which are documented and fulfill the users needs. 
+Some functions might be harmful to the smooth completion of the program if the user used them incorrectly and this way the developer has better control. 
+
+- Why should we comment our source code? Is it always needed? What should the comment state? What is self-documenting code?
+Commented source code makes it easier for the onlooker to understand what has been done without having to "examine the code deeply".
+The comments should state what a function does and if needed clarify the expected input and its return values/output/side-effects.
+Self-documenting code is clean code that is intuitively understandable without the need of extensive description or explementation.
+
+- Why should the module not output debug messages?
+Debug messages are mainly meant for the programmer, when debugging his code.
+So they are useless to the user, therefore an output would be usless and even confusing since the user has no way of fixing the potential issue.
+(not the same as error messages)
+
+- Why and when should you use assert?
+Assert us very useful for testing a program, since it runs throught all called instances of assert, even if the function was unsuccessful. 
+It is very useful for debugging a program.
+
+- What are the benefits of using make over calling the compiler by hand?
+Especially with big projects (that have many modules) you can compile multiple files with one command.
+Make also only compiles changed files, therefore it is very efficient.
