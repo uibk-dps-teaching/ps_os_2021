@@ -23,6 +23,65 @@ void round_robin(scheduler_context_t* ctx) {
 // Implement your schedulers here
 // ---------------------------------------------------------------------------
 
+
+void srtf(scheduler_context_t *ctx) {
+    int arr_size = (int) get_num_processes(ctx);
+    process_t *selected = get_process(ctx, 0);
+    for (int i = 1; i < arr_size; i++) {
+        process_t *current = get_process(ctx, i);
+        if (current->remaining_time < selected->remaining_time) {
+            selected = current;
+        }
+    }
+	schedule_process(ctx, selected);
+}
+
+void round_robin_q4(scheduler_context_t *ctx) {
+    process_t *selected = get_process(ctx, 0);
+    //using user variable 1 as "quantum counter"
+    //since the user values are initialized with 0 -> max value is 3 for q4
+    if(selected->user1 < 3) {
+        selected->user1 += 1;
+    } else {
+        selected->user1 = 0;
+		move_process_to_end(ctx, selected);
+    }
+	schedule_process(ctx, selected);
+}
+
+void hpf_p(scheduler_context_t *ctx) {
+    int size = (int) get_num_processes(ctx);
+    process_t *selected = get_process(ctx, 0);
+    for (int i = 1; i < size; i++) {
+        process_t *current = get_process(ctx, i);
+        if (current->priority > selected->priority) {
+            selected = current;
+        }
+    }
+	schedule_process(ctx, selected);
+}
+
+void hpf_np(scheduler_context_t *ctx) {
+    int arr_size = (int) get_num_processes(ctx);
+    process_t *selected = get_process(ctx, 0);
+    if (selected->user1) {
+		schedule_process(ctx, selected);
+    } else {
+		for (int i = 1; i < arr_size; i++) {
+        	process_t *current = get_process(ctx, i);
+        	if (current->user1) {
+				schedule_process(ctx, selected);
+			} else if (current->priority > selected->priority) {
+				selected = current;
+			} 
+		}
+    }
+    if(!selected->user1) {
+		selected->user1 += 1;
+	}
+	schedule_process(ctx, selected);
+}
+
 // ---------------------------------------------------------------------------
 
 int main(int argc, char** argv) {
@@ -47,12 +106,14 @@ int main(int argc, char** argv) {
 	print_schedule(stdout, compute_schedule(data, round_robin), data);
 
 	// Task 1
-	// print_schedule(stdout, compute_schedule(data, srtf), data);
-	// print_schedule(stdout, compute_schedule(data, round_robin_q4), data);
+	printf("Task 1: \n\n");
+	print_schedule(stdout, compute_schedule(data, srtf), data);
+	//print_schedule(stdout, compute_schedule(data, round_robin_q4), data);
 
 	// Task 2
-	// print_schedule(stdout, compute_schedule(data, hpf_p), data);
-	// print_schedule(stdout, compute_schedule(data, hpf_np), data);
+	printf("Task 2: \n\n");
+	print_schedule(stdout, compute_schedule(data, hpf_p), data);
+	print_schedule(stdout, compute_schedule(data, hpf_np), data);
 
 	// Task 3
 	// print_schedule(stdout, compute_schedule(data, my_scheduler), data);
