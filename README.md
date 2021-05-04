@@ -16,16 +16,17 @@ exercises associated with a given date are to be discussed on that day, i.e.,
 solutions for that exercise have to be handed in via OLAT by 17:00 on the
 previous day (Tuesdays).
 
-| Date       | Exc             | Topic                        | Notes                                 |
-| ---------- | --------------- | ---------------------------- | ------------------------------------- |
-| 2021-03-03 | -               |                              | Introduction to UNIX, shell scripting |
-| 2021-03-10 | [1](exercise01) | Shell scripting              | C Refresher                           |
-| 2021-03-17 | [2](exercise02) | Binary Search Tree           |                                       |
-| 2021-03-24 | [3](exercise03) | Processes, signal handling   |                                       |
-| 2021-04-14 | [4](exercise04) | FIFOs, pipes & sockets       |                                       |
-| 2021-04-21 | [5](exercise05) | Shared memory & semaphores   |                                       |
-| 2021-04-28 | [6](exercise06) | Scheduling simulator         |                                       |
-| 2021-05-05 | [7](exercise07) | Threads, mutexes & deadlocks |                                       |
+| Date       | Exc             | Topic                         | Notes                                 |
+| ---------- | --------------- | ----------------------------- | ------------------------------------- |
+| 2021-03-03 | -               |                               | Introduction to UNIX, shell scripting |
+| 2021-03-10 | [1](exercise01) | Shell scripting               | C Refresher                           |
+| 2021-03-17 | [2](exercise02) | Binary Search Tree            |                                       |
+| 2021-03-24 | [3](exercise03) | Processes, signal handling    |                                       |
+| 2021-04-14 | [4](exercise04) | FIFOs, pipes & sockets        |                                       |
+| 2021-04-21 | [5](exercise05) | Shared memory & semaphores    |                                       |
+| 2021-04-28 | [6](exercise06) | Scheduling simulator          |                                       |
+| 2021-05-05 | [7](exercise07) | Threads, mutexes & deadlocks  |                                       |
+| 2021-05-12 | [8](exercise08) | Atomics & condition variables |                                       |
 
 ## General Information
 
