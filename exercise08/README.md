@@ -5,10 +5,10 @@ with advanced techniques for mutual exclusion and synchronization.
 
 # Task 1
 
-Write a program that initializes an integer value `X` to 100,000 and subsequently
-creates 1,000 threads. Each of these newly created threads should execute a
-loop of 10,000 iterations. In each of these iterations, the value `X` should
-be decreased by one. The main thread waits for all the other threads to
+Write a program that initializes an integer value `X` to 10,000,000 and
+subsequently creates 1,000 threads. Each of these newly created threads should
+execute a loop of 10,000 iterations. In each of these iterations, the value `X`
+should be decreased by one. The main thread waits for all the other threads to
 finish and then writes the final value of `X` to the console.
 
 Then, implement two variants:
