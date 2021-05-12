@@ -27,6 +27,7 @@ previous day (Tuesdays).
 | 2021-04-28 | [6](exercise06) | Scheduling simulator          |                                       |
 | 2021-05-05 | [7](exercise07) | Threads, mutexes & deadlocks  |                                       |
 | 2021-05-12 | [8](exercise08) | Atomics & condition variables |                                       |
+| 2021-05-19 | [9](exercise09) | Threads advanced - Chat       |                                       |
 
 ## General Information
 
