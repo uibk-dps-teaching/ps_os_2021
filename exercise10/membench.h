@@ -1,6 +1,8 @@
 #ifndef MEMBENCH_H
 #define MEMBENCH_H
 
+#include <stddef.h>
+
 typedef void (*init_allocator_fn)(size_t);
 typedef void (*destroy_allocator_fn)();
 
