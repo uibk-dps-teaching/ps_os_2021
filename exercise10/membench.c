@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/time.h>
 
 #include "membench.h"
@@ -21,14 +22,14 @@ typedef struct {
 	free_fn my_free;
 } thread_context;
 
-static int64_t get_timestamp_ms() {
+static int64_t get_timestamp_us() {
 	struct timeval tv;
 	const int ret = gettimeofday(&tv, NULL);
 	if(ret != 0) {
 		perror("gettimeofday");
 		exit(EXIT_FAILURE);
 	}
-	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
+	return tv.tv_sec * 1000 * 1000 + tv.tv_usec;
 }
 
 static void* thread_fn(void* arg) {
@@ -40,7 +41,7 @@ static void* thread_fn(void* arg) {
 		ctx->my_init(POOL_SIZE);
 	}
 
-	const int64_t before = get_timestamp_ms();
+	const int64_t before = get_timestamp_us();
 
 	// -----------------------------------
 	//    Start of benchmarked section
@@ -51,6 +52,7 @@ static void* thread_fn(void* arg) {
 		const size_t size = ctx->alloc_size * (1 + rand_r(&seed) % MAX_ALLOC_MULTIPLIER);
 		ptrs[i] = ctx->my_malloc(size);
 		assert(ptrs[i] != NULL);
+		memset(ptrs[i], 0xFF, size);
 	}
 
 	// Free ~50% of allocations
@@ -79,7 +81,7 @@ static void* thread_fn(void* arg) {
 	//    End of benchmarked section
 	// -----------------------------------
 
-	const int64_t after = get_timestamp_ms();
+	const int64_t after = get_timestamp_us();
 
 	free(ptrs);
 
@@ -103,7 +105,7 @@ static double run_config(size_t num_threads, thread_context* ctx) {
 		time_sum += delta_time;
 	}
 
-	return time_sum / num_threads;
+	return time_sum / num_threads / 1000.0;
 }
 
 static void run_membench(init_allocator_fn my_init, destroy_allocator_fn my_destroy,
