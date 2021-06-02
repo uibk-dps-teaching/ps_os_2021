@@ -30,6 +30,7 @@ previous day (Tuesdays).
 | 2021-05-19 | [9](exercise09)  | Threads advanced - Chat       |                                       |
 | 2021-05-26 | [10](exercise10) | Memory management             |                                       |
 | 2021-06-02 | [11](exercise11) | Linking                       |                                       |
+| 2021-06-09 | [12](exercise12) | Last year's exam              | Gives bonus points!                   |
 
 ## General Information
 
